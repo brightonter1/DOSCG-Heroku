@@ -13,5 +13,4 @@ Visit our application to test [Full features] : https://shrouded-inlet-31944.her
 [Not full features because Line message API use Https required]
 - run : brew install heroku
 - clone this repository
-- cd api/ and client/ to run : npm install
-- cd .. run : heroku local api,client
+- run : heroku local api,client
