@@ -5,13 +5,12 @@ const cors = require('cors')
 const appRoute = require('./routes/index');
 const path = require('path')
 
-app.use(express.static(path.join(__dirname, 'frontend/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 // Anything that doesn't match the above, send back the index.html file
 
 app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 
