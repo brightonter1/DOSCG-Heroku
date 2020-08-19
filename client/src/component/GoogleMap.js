@@ -10,16 +10,17 @@ const GoogleMap = (props) => {
 
 
     useEffect(() => {
-        fetch('/location')
+
+        fetch('/location', {
+            method: 'POST',
+        })
             .then(res => res.json())
-            .then(locations => setLocat(locations))
+            .then(locats => setLocat(locats))
     }, [])
 
     useEffect(() => {
         locat && initMap()
     }, [locat])
-
-    console.log(locat)
 
     const initMap = () => {
         const directionsRenderer = new google.DirectionsRenderer();

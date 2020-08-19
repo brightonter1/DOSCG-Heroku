@@ -13,7 +13,9 @@ require('dotenv').config({ path: './config/.env' })
     Function : Show map find best way to go between Central World and SCG Bangsue with Google API from assignment 4
 
 */
-router.get('/location', function (req, res, next) {
+
+
+router.post('/location', function (req, res) {
     res.json(myDOSCG.location)
 })
 
@@ -28,7 +30,7 @@ router.get('/sequence', function (req, res) {
     res.send("sequence page")
 })
 
-router.post('/sequence', function (req, res, next) {
+router.post('/sequence', function (req, res) {
     res.json({ result: myDOSCG.findSequence("x,y,5,9,15,23,z") })
 })
 

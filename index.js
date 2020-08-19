@@ -42,7 +42,7 @@ app.use('/', appRoute)
  
 */
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 5000
 const server = app.listen(port, () => {
     console.log(`Listening to port:${port}`)
 })
@@ -60,7 +60,6 @@ const server = app.listen(port, () => {
 const socketIo = require('socket.io');
 const io = socketIo.listen(server);
 const line = require('@line/bot-sdk');
-const { timeStamp } = require('console');
 const config = {
     channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
     channelSecret: process.env.CHANNEL_SECRET
