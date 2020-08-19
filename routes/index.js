@@ -24,6 +24,10 @@ router.get('/location', function (req, res, next) {
 
 */
 
+router.get('/sequence', function (req, res) {
+    res.send("sequence page")
+})
+
 router.post('/sequence', function (req, res, next) {
     res.json({ result: myDOSCG.findSequence("x,y,5,9,15,23,z") })
 })
