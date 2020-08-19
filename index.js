@@ -3,6 +3,7 @@ const app = express();
 const bodyparser = require('body-parser')
 const cors = require('cors')
 const appRoute = require('./routes/index');
+const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
 
