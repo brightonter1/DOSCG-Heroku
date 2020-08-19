@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'frontend/build')))
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
 })
+console.log(path.join(__dirname + '/frontend/build/index.html'))
 
 require('dotenv').config({ path: './config/.env' })
 
@@ -41,7 +42,7 @@ app.use('/', appRoute)
  
 */
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 5000
 const server = app.listen(port, () => {
     console.log(`Listening to port:${port}`)
 })
