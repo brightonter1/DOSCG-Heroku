@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'frontend/build')))
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
 })
-console.log(path.join(__dirname + '/frontend/build/index.html'))
+console.log(path.join(__dirname + '/frontend/public/index.html'))
 
 require('dotenv').config({ path: './config/.env' })
 
