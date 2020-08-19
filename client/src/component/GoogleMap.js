@@ -8,18 +8,18 @@ const GoogleMap = (props) => {
 
     const [locat, setLocat] = useState(null)
 
+
     useEffect(() => {
         fetch('/location')
             .then(res => res.json())
-            .then(locations => {
-                setLocat(locations)
-            })
-
+            .then(locations => setLocat(locations))
     }, [])
 
     useEffect(() => {
         locat && initMap()
     }, [locat])
+
+    console.log(locat)
 
     const initMap = () => {
         const directionsRenderer = new google.DirectionsRenderer();
