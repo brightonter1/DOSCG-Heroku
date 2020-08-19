@@ -7,7 +7,12 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
 
+// Anything that doesn't match the above, send back the index.html file
 
+app.get('*', function (req, res) {
+    const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile(index);
+});
 
 
 require('dotenv').config({ path: './config/.env' })
@@ -188,10 +193,6 @@ function QuickReply(userId) {
     })
 }
 
-// Anything that doesn't match the above, send back the index.html file
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
-})
 
 /*
 
