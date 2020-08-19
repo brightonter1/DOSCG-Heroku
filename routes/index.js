@@ -49,18 +49,6 @@ router.post('/equation', function (req, res, next) {
     res.json({ result: result })
 })
 
-/*
-
-    Import @Line libs & config access 
-
-*/
-const line = require('@line/bot-sdk')
-const config = {
-    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-    channelSecret: process.env.CHANNEL_SECRET
-};
-
-
 
 module.exports = router;
 
